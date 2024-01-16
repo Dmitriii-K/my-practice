@@ -6,26 +6,28 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>calculator</title>
   </head>
-  <div class="kmb-calculator">
-    <div class="operation-block">
-      <button type="button">+</button>
-      <button type="button">-</button>
-      <button type="button">*</button>
-      <button type="button">/</button>
-    </div>
-    <div class="separator">
-      <hr />
-    </div>
-    <div class="input-block">
-      <div class="input-block-let">
-        <label>number1</label>
-        <input type="number" />
+  <body>
+    <div class="kmb-calculator">
+      <div class="operation-block">
+        <button id="buttonPlus">+</button>
+        <button id="buttonMinus">-</button>
+        <button id="buttonMultiply">*</button>
+        <button id="buttonDevide">/</button>
       </div>
-      <div class="input-block-rit">
-        <label>number2</label>
-        <input type="number" />
+      <div class="separator">
+        <hr />
+      </div>
+      <div class="input-block">
+        <div class="input-block-let">
+          <label>number1</label>
+          <input type="number" value="10" id="number1" />
+        </div>
+        <div class="input-block-rit">
+          <label>number2</label>
+          <input type="number" value="5" id="number2" />
+        </div>
       </div>
     </div>
-  </div>
-  <body></body>
+    <script src="/js/index.js"></script>
+  </body>
 </html>
