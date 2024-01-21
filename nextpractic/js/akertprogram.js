@@ -1,18 +1,33 @@
-const words = {
-  word0: {
+const words = [
+  {
     original: "Wassup",
     translation: "Здарова",
   },
-  word1: {
+  {
     original: "Bye",
     translation: "Покеда",
   },
-  word2: {
+  {
     original: "Programmer",
     translation: "Программист",
   },
-  wordsCount: 3,
-};
+];
+
+// const words = {
+//   word0: {
+//     original: "Wassup",
+//     translation: "Здарова",
+//   },
+//   word1: {
+//     original: "Bye",
+//     translation: "Покеда",
+//   },
+//   word2: {
+//     original: "Programmer",
+//     translation: "Программист",
+//   },
+//   wordsCount: 3,
+// };
 const resultMessager = {
   finishSuccess: "Молодец, Good result",
   finishUnSuccess: "Молодец, но постарайся лучше",
@@ -25,26 +40,26 @@ const result = {
   correctAnswerscount: 0,
 };
 
-const userAbswer0 = prompt(words.word0.original);
-alert(userAbswer0 === words.word0.translation);
-if (userAbswer0 === words.word0.translation) {
+const userAbswer0 = prompt(words[0].original);
+alert(userAbswer0 === words[0].translation);
+if (userAbswer0 === words[0].translation) {
   result.correctAnswerscount = result.correctAnswerscount + 1;
 }
 
-const userAbswer1 = prompt(words.word1.original);
-alert(userAbswer1 === words.word1.translation);
-if (userAbswer1 === words.word1.translation) {
+const userAbswer1 = prompt(words[1].original);
+alert(userAbswer1 === words[1].translation);
+if (userAbswer1 === words[1].translation) {
   result.correctAnswerscount = result.correctAnswerscount + 1;
 }
 
-const userAbswer2 = prompt(words.word2.original);
-alert(userAbswer2 === words.word2.translation);
-if (userAbswer2 === words.word2.translation) {
+const userAbswer2 = prompt(words[2].original);
+alert(userAbswer2 === words[2].translation);
+if (userAbswer2 === words[2].translation) {
   result.correctAnswerscount = result.correctAnswerscount + 1;
 }
 
 const userCorrectAnswersParcent =
-  (result.correctAnswerscount / words.wordsCount) * 100;
+  (result.correctAnswerscount / words.length) * 100;
 
 if (userCorrectAnswersParcent > setting.correctAnswersMiPaccent) {
   alert(resultMessager.finishSuccess);
