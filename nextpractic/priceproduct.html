@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priceproduct</title>
+  </head>
+  <body>
+    <script>
+      let balance = 110;
+      //   const priceProduct = 100;
+      //---------------------------------------------
+      document.write("START", "<br>");
+
+      const priceProductString = window.prompt("How much does product cost?");
+      const priceProduct = Number(priceProductString);
+
+      if (isNaN(priceProduct)) {
+        document.write("You input incorrect number");
+      } else {
+        if (balance < priceProduct) {
+          document.write("Not enough money");
+        } else {
+          document.write("Product purchased");
+        }
+      }
+      document.write("<br>", "END");
+
+      //------------------Сделать на три товара!--------------//
+    </script>
+  </body>
+</html>
