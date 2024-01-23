@@ -7,16 +7,12 @@ let grade5 = 4;
 // console.log(grade3); // 3 - оценка за третий предмет
 let grades = [5, 4, 3, 5, 4];
 let extractedGrade = grades[4];
-
-console.log(extractedGrade);
+// console.log(extractedGrade);
 // console.log(grades[1]);//----4
 let book1 = "Война и мир";
 let book2 = "Мастер и Маргарита";
 let book3 = "Преступление и наказание";
-console.log(book2);
-
-let books = ["Война и мир", "Мастер и Маргарита", "Преступление и наказание"];
-console.log(books);
+// console.log(book2); //----"Мастер и Маргарита"
 
 let person1 = { name: "Анна", surname: "Смирнова", birthYear: 1990 };
 let person2 = { name: "Иван", surname: "Петров", birthYear: 1985 };
@@ -42,11 +38,11 @@ let shopingList3Item2 = "шампунь";
 
 console.log(shopingList1Item2); //-------хлеб------------
 
-let shopingLits = [
-  ["молоко", "хлеб", "яйца"],
-  ["сок", "мороженое"],
-  ["корм для кота", "шампунь"],
-];
-console.log(shopingLits[1][0]); //---------сок---------
+// let shopingLits = [
+//   ["молоко", "хлеб", "яйца"],
+//   ["сок", "мороженое"],
+//   ["корм для кота", "шампунь"],
+// ];
+// console.log(shopingLits[1][0]); //---------сок---------
 
 [1, 2, 3, 5, 7, {}, "", []].length; //------длинна массива 8-----
