@@ -7,7 +7,6 @@ if (num < 10) {
 } else {
   console.log("num > 10");
 }
-
 console.log("***Несколько условий if...оперантов***");
 console.log(num < 10 ? "num < 10" : num == 10 ? "num == 10" : "num > 10");
 
@@ -30,7 +29,6 @@ switch (numCheck) {
     console.log("Неизвестно!");
     break;
 }
-
 console.log("***Инструкция switch через if...else***");
 if (numCheck == 2 || numCheck == 4 || numCheck == 6 || numCheck == 8) {
   console.log("Четное!");
