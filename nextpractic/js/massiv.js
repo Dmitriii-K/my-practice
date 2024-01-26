@@ -46,3 +46,21 @@ console.log(shopingList1Item2); //-------хлеб------------
 // console.log(shopingLits[1][0]); //---------сок---------
 
 [1, 2, 3, 5, 7, {}, "", []].length; //------длинна массива 8-----
+
+const massive = [1, 2, 3];
+massive.push(10); // добавляет в конец массива элемент
+console.log(massive);
+massive.pop(); // удаляет последний элемент массива
+console.log(massive);
+console.log(massive.join(" ,")); // превращает элементы массива в строку
+const massive2 = massive.slice(); // копирование массива
+// const massive2 = [...massive]; // второй способ копирования массива
+massive2.push(6);
+console.log(massive, massive2);
+
+console.log("*** объединение массивов ***");
+const a = [1, 2, 4];
+const b = [3, 5, 8];
+const c = [1, 6, 7];
+const sum = [...a, ...b, ...c, 23];
+console.log(sum);
