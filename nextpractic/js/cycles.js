@@ -31,6 +31,7 @@ const repeatCount = 5;
 for (let index = 1; index <= repeatCount; index++) {
   document.write("a");
 }
+document.write("<br>");
 
 console.log("*** Цикл с предисловием while ***");
 let n = 3;
@@ -67,3 +68,17 @@ outer: for (let i = 0; i < 10; i++) {
     console.log(j);
   }
 }
+
+console.log("*** While ***");
+let sum = +prompt("Укажите стартовую сумму", 1000);
+const persent = 15;
+const result = 2000;
+let count = 0;
+const depositTern = +prompt("укажите срок депозита", 10);
+
+while (count < depositTern) {
+  sum = sum + sum * (persent / 100);
+  count = count + 1;
+  document.write(count + ":" + sum + "<br>");
+}
+console.log(sum, count);
