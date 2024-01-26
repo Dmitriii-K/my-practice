@@ -64,3 +64,26 @@ const b = [3, 5, 8];
 const c = [1, 6, 7];
 const sum = [...a, ...b, ...c, 23];
 console.log(sum);
+
+console.log("*** Методы перебора массива ***");
+const names = ["Oleg", "Anna", "Alexandr"];
+const namesChange = names.filter(function (name) {
+  return name.length < 5;
+});
+console.log(namesChange);
+
+const names1 = ["OLeG", "AnNa", "AleXandr"];
+const goodNames = names.map((name) => {
+  return name.toLowerCase(); // делает буквы маленькими
+  // return name.toUpperCase(); // делает буквы большими
+});
+console.log(goodNames);
+
+const arr = [4, "stroka"];
+console.log(arr.some((item) => typeof item === "number")); // выводит true если хотя бы одна цифра
+// console.log(arr.every((item) => typeof item === "number")); // выводит true если все цифры
+
+console.log("*** Методы сложения массива ***");
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.reduce((sum, current) => sum + current);
+console.log(result);

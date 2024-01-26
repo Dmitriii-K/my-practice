@@ -42,3 +42,16 @@ function showTrueResult() {
   console.log(true);
 }
 getResult(2 > 1, showTrueResult);
+
+console.log("*** Функции-конструкторы + this ***");
+function User(name, id, age) {
+  this.name = name;
+  this.id = id;
+  this.age = age;
+  this.admin = false;
+  this.hello = function () {
+    console.log(`Hello ${this.name}`);
+  };
+}
+const igor = new User("Igor", 13, 18);
+console.log(igor.hello());
