@@ -54,3 +54,58 @@ const toyota = {
 };
 Object.setPrototypeOf(bmw, sedan);
 console.log(bmw.color);
+
+console.log("*** Методы в объектах ***");
+let chevy = {
+  make: "Chevy",
+  model: "Aveo",
+  year: 1955,
+  color: "red",
+  passengers: 4,
+  convertible: false,
+  mileage: 8000,
+  started: false,
+  fuel: 0,
+
+  light: function () {
+    // это не функция а МЕТОД
+    console.log("Включен ближний свет");
+  },
+  start: function () {
+    // свойство этого объекта
+    if (this.fuel == 0) {
+      alert("Бак пуст, заправьте его!");
+    } else {
+      this.started = true;
+    }
+  },
+  stop: function () {
+    this.started = false;
+  },
+  drive: function () {
+    if (this.started) {
+      if (this.fuel > 0) {
+        alert("Едем");
+        this.fuel--;
+      } else {
+        alert("Нужно заправить автомобиль");
+        this.stop();
+      }
+    } else {
+      alert("Нужно завести автомобиль");
+    }
+  },
+  addFuel: function (amount) {
+    this.fuel = this.fuel + amount;
+  },
+};
+
+chevy.start(); // Нужно заправить автомобиль
+chevy.addFuel(2); // бензина на 2 поездки
+chevy.start();
+chevy.drive(); //"Едем"
+chevy.drive(); //"Едем"
+chevy.drive(); // Нужно заправить автомобиль
+chevy.drive(); //"Нужно завести автомобиль"
+chevy.drive();
+//-----------------Скорректировать код------------
