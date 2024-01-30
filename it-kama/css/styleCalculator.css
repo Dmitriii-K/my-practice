@@ -1,0 +1,32 @@
+.kmb-calculator {
+  background-color: aliceblue;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.kmb-calculator .operation-block button {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
+}
+
+.separator {
+}
+
+.input-block {
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+.input-block label {
+  display: block;
+}
+.input-block-let input {
+  margin-right: 4px;
+}
+
+.input-block-num {
+}
