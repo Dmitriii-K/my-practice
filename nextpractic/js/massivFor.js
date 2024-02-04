@@ -41,3 +41,8 @@ for (let j = 0; j < shopingLits.length; j++) {
 // product1 = list[1];//-------j=1
 
 // console.log(product);
+console.log("*** forEach() ***");
+const fruits = ["Яблоко", "Груша", "Слива", "Апельсин", "Виноград"];
+fruits.forEach(function (item, index) {
+  console.log(`Элемент с индексом ${index} = ${item}`);
+});
