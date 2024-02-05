@@ -7,8 +7,18 @@ if (num < 10) {
 } else {
   console.log("num > 10");
 }
-console.log("***Несколько условий if...оперантов***");
+console.log("*** ТЕРНАРНЫЙ ОПЕРАТОР -Несколько условий if...оперантов***");
 console.log(num < 10 ? "num < 10" : num == 10 ? "num == 10" : "num > 10");
+let greeting;
+let time = 10;
+// if (time < 12) {
+//   greeting = "Доброе утро";
+// } else {
+//   greeting = "Добрый день";
+// }
+// console.log(greeting);
+greeting = time < 12 ? "Доброе утро" : "Добрый день";
+console.log(greeting);
 
 console.log("***Инструкция switch- группировка вариантов***");
 const numCheck = 4;

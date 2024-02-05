@@ -33,6 +33,11 @@ for (let index = 1; index <= repeatCount; index++) {
 }
 document.write("<br>");
 
+for (let c = 0; c < 10; c = c + 2) {
+  // выводит с добавлением на 2
+  console.log(c);
+}
+
 console.log("*** Цикл с предисловием while ***");
 let n = 3;
 while (n > 0) {
@@ -82,3 +87,9 @@ while (count < depositTern) {
   document.write(count + ":" + sum + "<br>");
 }
 console.log(sum, count);
+
+console.log("*** Обход массива циклом for(of) ***");
+const autoBrands = ["Audi", "BMW", "Mazda", "Toyota"];
+for (const brand of autoBrands) {
+  console.log(brand);
+}

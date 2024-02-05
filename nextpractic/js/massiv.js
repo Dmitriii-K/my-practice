@@ -1,3 +1,12 @@
+console.log("*** Методы массивов ***");
+// .push(), .pop(), .shift(), .unshift(), .splice(), .splice(), .forEach(), .indexOf(), .incLudes()
+
+// arr.push(item) - Добавит элемент в конец массива
+// arr.pop() - Удалит элемент из конца массива
+// arr.shift() - Удалит элемент из начала массива
+// arr.unshift(...items) - Добавит элемент в начало массива
+// arr.splice(1, 2) - Удалит какой-либо элемент массива или несколько элементов, где 1- указание стартового порядкового номера элемента, а 2- кол-во удаленных элементов со сдвигом вправо
+
 let grade1 = 5;
 let grade2 = 4;
 let grade3 = 3;
@@ -22,8 +31,8 @@ let persons = [
   { name: "Анна", surname: "Смирнова", birthYear: 1990 },
   { name: "Иван", surname: "Петров", birthYear: 1985 },
 ];
-console.log(persons[0].surname);
-console.log(persons[1].birthYear);
+console.log(persons[0].surname); // "Смирнова"
+console.log(persons[1].birthYear); // 1985
 
 //------------------------------------------------------//
 let shopingList1Item1 = "молоко";

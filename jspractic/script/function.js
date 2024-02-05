@@ -34,6 +34,10 @@ console.log("*** Функция Arrow Function Expression ***"); // Стрело
 const showHelloUser3 = (name) => console.log(`Hello, ${name}!`);
 showHelloUser3("Peter");
 
+const summ = (a, b) => a + b;
+const res = summ(10, 20);
+console.log(res);
+
 console.log("*** CALBACK FUNCTION ***");
 function getResult(expression, callback) {
   if (expression) callback();
@@ -55,3 +59,23 @@ function User(name, id, age) {
 }
 const igor = new User("Igor", 13, 18);
 console.log(igor.hello());
+
+console.log("*** Функции как аргумент ***");
+function summ(a, b) {
+  return a + b;
+}
+function doSomething(func) {
+  let x = 10;
+  let y = 15;
+  let result = func(x, y);
+  console.log(result);
+}
+doSomething(summ);
+
+console.log("*** Самовызывающаяся функция IIFE ***");
+(function sayHi() {
+  console.log(`Привет дорогой пользователь!`);
+})();
+(function summ(a, b) {
+  console.log(a + b);
+})(10, 15);

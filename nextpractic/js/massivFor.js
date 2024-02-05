@@ -46,3 +46,16 @@ const fruits = ["Яблоко", "Груша", "Слива", "Апельсин", 
 fruits.forEach(function (item, index) {
   console.log(`Элемент с индексом ${index} = ${item}`);
 });
+
+const autoBrands = ["Audi", "BMW", "Mazda", "Toyota"];
+
+autoBrands.forEach(function (item, index) {
+  console.log(`${item} => ${index}`);
+});
+
+// autoBrands.forEach(printBrand); // задаем функцию отдельно и передаем через цикл
+// function printBrand(brand, i) {
+//   console.log(`${brand} => ${i}`);
+// }
+
+autoBrands.forEach((brand, i) => console.log(`${brand} = ${i}`)); // стрелочная функция
