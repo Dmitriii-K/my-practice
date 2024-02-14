@@ -1,14 +1,16 @@
+// Не рекомендуется изменять объект/переменные внутри функции. Необходимо создавать копию либо новй объект/переменные внутри функции, оставляя исходный объект без изменений( если это не требуется)- Чистая функция
+
 console.log("*** Функции ***");
 function calcSumBetween(num1, num2) {
   // параметры num1 и num2 являются параметрами функции
-  let sum = 0;
+  let summ = 0;
   for (let i = num1; i < num2; i++) {
-    sum += i;
+    summ += i;
   }
-  console.log(sum);
+  console.log(summ);
 }
-let sum1 = calcSumBetween(4, 6); //- 9(4+5)
-let sum2 = calcSumBetween(3, 7); //- 18(3+4+5+6)
+let summ1 = calcSumBetween(4, 6); //- 9(4+5)
+let summ2 = calcSumBetween(3, 7); //- 18(3+4+5+6)
 
 console.log("*** Функция с несколькими return ***");
 function checkParity(num) {
@@ -38,7 +40,7 @@ const summ = (a, b) => a + b;
 const res = summ(10, 20);
 console.log(res);
 
-console.log("*** CALBACK FUNCTION ***");
+console.log("*** CALBACK FUNCTION ***"); // функция, вызывающая внутри себя другую функцию
 function getResult(expression, callback) {
   if (expression) callback();
 }
@@ -61,9 +63,9 @@ const igor = new User("Igor", 13, 18);
 console.log(igor.hello());
 
 console.log("*** Функции как аргумент ***");
-function summ(a, b) {
-  return a + b;
-}
+// function summ(a, b) {
+//   return a + b;
+// }
 function doSomething(func) {
   let x = 10;
   let y = 15;
@@ -79,3 +81,16 @@ console.log("*** Самовызывающаяся функция IIFE ***");
 (function summ(a, b) {
   console.log(a + b);
 })(10, 15);
+
+console.log("*** Data() ***");
+const newPost = (post, addedAt = Date()) => ({
+  // каждый раз при вызове addedAt будет присваиваться настоящая(реальная) дата
+  ...post,
+  addedAt,
+});
+const firstPost = {
+  id: 1,
+  author: "Dmitriy",
+};
+const trc = newPost(firstPost);
+console.log(trc); // выводить объект с реальной датой
