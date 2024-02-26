@@ -20,3 +20,19 @@ const getData = (url) =>
 getData("url") // указывем необходимый адрес(url)
   .then((data) => console.log(data))
   .catch((error) => console.log(error.message));
+
+console.log("*** Request data... ***");
+const sleep = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(), ms);
+  });
+};
+// sleep(2000).then(() => console.log("After 2 sec"));
+// sleep(3000).then(() => console.log("After 3 sec"));
+
+Promise.all([sleep(2000), sleep(5000)]).then(() => {
+  console.log("All promises");
+}); // Выведет только после завершения всех массивов
+Promise.race([sleep(2000), sleep(5000)]).then(() => {
+  console.log("Race promises");
+}); // Выведет тответ после выполнения перого промиса

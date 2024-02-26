@@ -94,3 +94,12 @@ const firstPost = {
 };
 const trc = newPost(firstPost);
 console.log(trc); // выводить объект с реальной датой
+
+console.log("*** Замыкание ***"); // Вызывается функция внутри функции
+function urlGenerator(domain) {
+  return function (url) {
+    return `https://${url}.${domain}`;
+  };
+}
+const ruUrl = urlGenerator("ru");
+console.log(ruUrl("yandex"));

@@ -96,3 +96,12 @@ console.log("*** Методы сложения массива ***");
 const numbers = [1, 2, 3, 4, 5];
 const result = numbers.reduce((sum, current) => sum + current);
 console.log(result);
+
+console.log("*** Методы наследования ***");
+const array = [1, 2, 3, 4, 5];
+Array.prototype.multArr = function (n) {
+  return this.map(function (i) {
+    return i * n;
+  });
+};
+console.log(array.multArr(5));
