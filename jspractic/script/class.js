@@ -39,3 +39,37 @@ console.log(myArray);
 myArray.sum(); // сумма массива
 const summ = myArray.sum();
 console.log(summ);
+
+console.log(" ********** Внесение изменений в параментры  ********* ");
+class Animal {
+  static type = "ANIMAL";
+  constructor(options) {
+    this.name = options.name;
+    this.age = options.age;
+    this.hasTail = options.hasTail;
+  }
+  voice() {
+    console.log("I am Animal");
+  }
+}
+class Cat extends Animal {
+  static type = "CAT";
+
+  constructor(options) {
+    // обращаемся к родительскому конструктору
+    super(options);
+    this.color = options.color;
+  }
+  voice() {
+    super.voice(); // выводит родительское сообщение, а затем дочернее
+    console.log("I am cat"); // перетираем родительское значение
+  }
+}
+
+const cat = new Cat({
+  name: "Cat",
+  age: 7,
+  color: "black", // будет присутствовать не смотря на отсуствие параметра в родительском объекте
+  hasTail: true,
+});
+cat.voice();
