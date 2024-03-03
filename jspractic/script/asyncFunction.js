@@ -43,3 +43,46 @@ try {
 } catch (error) {
   console.log(error.message);
 }
+// =========================================================
+// ****** Список пользователей ******
+const list = document.querySelector("#list");
+const filterInput = document.querySelector("#filter");
+let USERS = [];
+
+filterInput.addEventListener("input", (event) => {
+  const value = event.target.value.toLowerCase();
+  const filterUsers = USERS.filter((user) => {
+    return user.name.toLowerCase().includes(value);
+  });
+  render(filterUsers);
+}); // фильтруем пользователей по вводу в поле
+
+async function start() {
+  list.innerHTML = "Loading...";
+  try {
+    const resp = await fetch("URL"); // в URL вводим адрес и получаем промис(данные в шифре)
+    const data = await resp.json(); // парсим полученные данные и получаем обычный JS массив данных
+    setTimeout(() => {
+      USERS = data;
+      render(data); // запускаем функцию массива с пользователями
+    }, 2000);
+  } catch (err) {
+    list.style.color = "red";
+    list.innerHTML = err.message;
+  }
+}
+
+function render(users = []) {
+  if (users.length === 0) {
+    list.innerHTML = "No matched users";
+  } else {
+    const html = users.map(toHTML).join(""); // join('')- убираем запятые после распоковки массива с данными
+    list.innerHTML = html;
+  }
+} // создаем массив списка пользователей
+function toHTML(user) {
+  // выводит список пользователей с данными
+  return `<li class="list-group-item">${user.name}</li>`;
+} // функция вывода списка пользователей
+
+start();
