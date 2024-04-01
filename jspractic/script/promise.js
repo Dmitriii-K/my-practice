@@ -36,3 +36,18 @@ Promise.all([sleep(2000), sleep(5000)]).then(() => {
 Promise.race([sleep(2000), sleep(5000)]).then(() => {
   console.log("Race promises");
 }); // Выведет тответ после выполнения перого промиса
+
+console.log("*** Лотерея ***");
+const LotteryPromise = new Promise(function (resolve, reject) {
+  console.log("Происходит розыгрыш лотереи");
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve("Вы ВЫИГРАЛИ!");
+    } else {
+      reject(new Error("Вы ПРОИГРАЛИ!"));
+    }
+  }, 3000);
+});
+LotteryPromise.then((res) => console.log(res)).catch((err) =>
+  console.error(err)
+);
