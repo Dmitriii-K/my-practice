@@ -51,3 +51,11 @@ const LotteryPromise = new Promise(function (resolve, reject) {
 LotteryPromise.then((res) => console.log(res)).catch((err) =>
   console.error(err)
 );
+
+console.log("*** Запуск нескольких Promise параллельно ***");
+const countryData = await Promise.all([
+  getDataAndConvertJSON(`url`),
+  getDataAndConvertJSON(`url`),
+  getDataAndConvertJSON(`url`),
+]);
+console.log(countryData.map((countryData) => countryData[0].capital)); // выводит сталицы трех стран в массиве

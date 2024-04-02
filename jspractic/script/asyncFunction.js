@@ -86,3 +86,14 @@ function toHTML(user) {
 } // функция вывода списка пользователей
 
 start();
+
+console.log("*** Вызов асинхронной функции внутри себя ***");
+(async function () {
+  try {
+    const place = await getCountryData();
+    console.log(`2 ${place}`);
+  } catch (e) {
+    console.error(`2 ${e.message}`);
+  }
+  console.log(`3 Получили местоположение`);
+})();
